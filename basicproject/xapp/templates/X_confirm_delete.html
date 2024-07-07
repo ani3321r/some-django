@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Xapp
+{% endblock  %}
+
+{% block content %}
+<h1 class="text-center mt-4">Do you want to delete this X?</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Delete</button>
+    <a class="btn btn-success" href="{% url 'X_list' %}">Cancel</a>
+</form>
+
+{% endblock  %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Xapp
+{% endblock  %}
+
+{% block content %}
+<h1 class="text-center mt-4">Welcome to Xapp</h1>
+
+<a class="btn btn-primary mb-4" href="{% url 'X_create' %}">Create a X</a>
+<div class="container row gap-3">
+    {% for X in Xss %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{X.photo.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{X.user.username}}</h5>
+          <p class="card-text">{{X.text}}</p>
+          <a href="{% url 'X_edit' X.id %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'X_delete' X.id %}" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock  %}

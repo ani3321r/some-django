@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Xapp
+{% endblock  %}
+
+{% block content %}
+<h1 class="text-center mt-4">Welcome to Xapp</h1>
+
+<h2>
+    {%if form.instance.pk %} Edit X {% else %} Create X {% endif %}
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-warning" type="submit">Submit</button>
+    </form>
+    <a href="{% url 'X_list' %}">Back to your X list</a>
+</h2>
+{% endblock  %}
