@@ -15,8 +15,10 @@ Xapp
         <div class="card-body">
           <h5 class="card-title">{{X.user.username}}</h5>
           <p class="card-text">{{X.text}}</p>
+          {% if X.user == user %}
           <a href="{% url 'X_edit' X.id %}" class="btn btn-primary">Edit</a>
           <a href="{% url 'X_delete' X.id %}" class="btn btn-danger">Delete</a>
+          {% endif %}
         </div>
       </div>
     {% endfor %}

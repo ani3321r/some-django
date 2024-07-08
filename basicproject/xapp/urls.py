@@ -6,4 +6,5 @@ urlpatterns = [
     path("create/", views.X_create, name='X_create'),
     path("<int:X_id>/edit/", views.X_edit, name='X_edit'),
     path("<int:X_id>/delete/", views.X_delete, name='X_delete'),
+    path("register/", views.register, name='register'),
 ]
